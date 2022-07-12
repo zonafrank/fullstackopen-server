@@ -1,0 +1,31 @@
+GET http://localhost:3002/api/notes
+
+###
+GET http://localhost:3002/api/notes
+
+###
+GET http://localhost:3002/api/notes/62c933bdc165f1632f8f7ad2
+
+###
+PUT http://localhost:3002/api/notes/62c933bdc165f1632f8f7ad2
+Content-Type: application/json
+
+{
+    "content": "HTML is easy",
+    "important": true
+}
+
+###
+GET http://localhost:3002/api/notes/invalidNoteId
+
+###
+DELETE http://localhost:3002/api/notes/62cc0005fa736003a60631e5
+
+###
+POST http://localhost:3002/api/notes
+Content-Type: application/json
+
+{
+    "content": "hi",
+    "important": "true"
+}
