@@ -1,41 +1,6 @@
 const notesRouter = require("express").Router();
 const Note = require("../models/note");
 
-const initialNotes = [
-  {
-    content: "HTML is easy",
-    date: "2022-07-09T07:52:29.746Z",
-    important: true,
-  },
-  {
-    content: "Browser can execute only Javascript",
-    date: "2022-07-09T07:52:30.828Z",
-    important: false,
-  },
-  {
-    content: "GET and POST are the most important methods of HTTP protocol",
-    date: "2022-07-09T07:52:30.979Z",
-    important: false,
-  },
-  {
-    content: "PUT is another HTTP Protocol method",
-    date: "2022-07-09T11:17:44.327Z",
-    important: true,
-  },
-  {
-    content: "DELETE is also another HTTP method",
-    date: "2022-07-09T11:19:38.771Z",
-    important: false,
-  },
-];
-
-(async function () {
-  for (let i = 0; i < initialNotes.length; i++) {
-    const note = new Note(initialNotes[i]);
-    await note.save();
-  }
-})();
-
 notesRouter.get("/", async (request, response, next) => {
   try {
     const notes = await Note.find({});
